@@ -77,6 +77,12 @@ namespace Collections
             Console.WriteLine();
             #endregion
 
+            #region Hashtable
+            Hashtable hashtable = new Hashtable();
+            hashtable['c'] = 250;
+            object c = hashtable['c'];
+
+            #endregion
             // colectii generice - tipizate
 
             #region List
