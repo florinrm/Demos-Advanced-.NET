@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace Collections
 {
@@ -257,6 +258,41 @@ namespace Collections
 
             foreach (KeyValuePair<int, string> elem in dict3) {
                 Console.WriteLine(elem.Key + ": " + elem.Value);
+            }
+            #endregion
+
+            // colectii specializate
+            #region StringCollection
+            StringCollection stringCollection = new StringCollection();
+            stringCollection.Add("ayy");
+            stringCollection.Add("ceva");
+            stringCollection.Add("auuuuch");
+            stringCollection[1] = "altceva";
+            stringCollection.RemoveAt(2);
+            #endregion
+
+            #region StringDictionary
+            StringDictionary stringDictionary = new StringDictionary();
+            stringDictionary.Add("first", "ayy");
+            stringDictionary.Add("second", "altceva");
+            stringDictionary["third"] = "ceva, dar mai altceva";
+
+            Console.WriteLine("\nIterating through stringDictionary...");
+            foreach(DictionaryEntry elem in stringDictionary) {
+                Console.WriteLine(elem.Key + ": " + elem.Value);
+            }
+            #endregion
+
+            #region NameValueCollection
+            NameValueCollection collection = new NameValueCollection();
+            collection.Add("ceva", "altceva");
+            collection.Add("ceva", "inca ceva");
+            collection.Add("ceva", "69");
+            collection.Add("altceva", "nimic");
+
+            Console.WriteLine("\nIterating through NameValueCollection...");
+            foreach (string elem in collection) {
+                Console.WriteLine(elem + ": " + collection.Get(elem));
             }
             #endregion
         }
